@@ -1,12 +1,12 @@
 import React from "react"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
-import LandingPage from "./LandingPage"
+import LocationIndexContainer from "./LocationIndexContainer"
 
 export const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/" component={LocationIndexContainer} />
       </Switch>
     </BrowserRouter>
   )
