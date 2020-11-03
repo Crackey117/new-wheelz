@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-
+import { Link } from 'react-router-dom'
 const LocationsIndex = (props) => {
   const [locations, setLocations] = useState([])
   useEffect(() => {
@@ -24,8 +24,10 @@ const LocationsIndex = (props) => {
  
     return (
     <div className="callout secondary cell small-4"> 
-      <h2 >{location.title}</h2>
-      <p>{location.street_address} - {location.city} - {location.state}</p>  
+      <Link to={`/locations/${location.id}`}>
+        <h2 >{location.title}</h2>
+        <p>{location.street_address} - {location.city} - {location.state}</p>  
+      </Link>
     </div>)
   })
 
