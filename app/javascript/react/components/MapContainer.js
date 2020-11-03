@@ -3,8 +3,8 @@ import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import CurrentLocation from './Map';
 
 const mapStyles = {
-  width: '80%',
-  height: '80%'
+  width: '50%',
+  height: '50%'
 };
 
 
@@ -34,31 +34,24 @@ export class MapContainer extends Component {
   render() {
     return (
       <div>
-      <CurrentLocation
-        centerAroundCurrentLocation
-        google={this.props.google}
-      >
-        <Marker onClick={this.onMarkerClick} name={'Current Location'} />
-        
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
-          onClose={this.onClose}
-        >
-          <div>
-            <h4>{this.state.selectedPlace.name}</h4>
-          </div>
-        </InfoWindow>
-        
-      </CurrentLocation>
-    
+        <CurrentLocation
+          centerAroundCurrentLocation
+          google={this.props.google}
+          zoom={14}
+          style={mapStyles}
+          initialCenter={
+            {
+              lat: 42.3554,
+              lng: -71.0640
+            }
+          }
+        />
+  
       </div>
     );
   }
 }
 
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyDlYJtTL5QXmzlKQSGRr5RP9H-rKQoPGeE"
+  apiKey: "AIzaSyC_YGBXqAn8ejgn1DXEe2nSQh4M9lUULyo"
 })(MapContainer);
-
-
