@@ -60,4 +60,26 @@ RSpec.describe Api::V1::LocationsController, type: :controller do
     end
   end
 
+  describe "GET#show" do
+
+    it "should return an movie with all its attributes" do
+      
+      get :show, params: {id: location2.id}
+      returned_json = JSON.parse(response.body)
+      expect(response.status).to eq 200
+      expect(response.content_type).to eq("application/json")
+      expect(returned_json.length).to eq 11
+      expect(returned_json["street_address"]).to eq "1 Franklin Park Rd"
+      expect(returned_json["city"]).to eq "Boston"
+      expect(returned_json["state"]).to eq "MA"
+      expect(returned_json["size"]).to eq "large"
+      expect(returned_json["description"]).to eq "Decent sized park, long sidewalks going all around"
+      expect(returned_json["traffic_level"]).to eq "low"
+      expect(returned_json["smoothness"]).to eq 2
+      expect(returned_json["lat"].to_f).to eq 42.3031
+      expect(returned_json["lng"].to_f).to eq -71.0868
+      expect(returned_json["title"]).to eq "Franklin Park"
+    end
+  end
+
 end
