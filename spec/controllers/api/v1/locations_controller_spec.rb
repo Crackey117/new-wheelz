@@ -25,6 +25,14 @@ RSpec.describe Api::V1::LocationsController, type: :controller do
     lng: -71.0868, 
     title: "Franklin Park"
   ) }
+  let!(:comment1) { Comment.create(
+    body: "Great place, would come again!",
+    location: location2 
+  ) }
+  let!(:comment2) { Comment.create(
+    body: "Too many people, too thin sidewalks",
+    location: location2 
+  ) }
 
   describe "GET#index" do
     it "should return a list of all the movies" do
@@ -68,17 +76,20 @@ RSpec.describe Api::V1::LocationsController, type: :controller do
       returned_json = JSON.parse(response.body)
       expect(response.status).to eq 200
       expect(response.content_type).to eq("application/json")
-      expect(returned_json.length).to eq 11
-      expect(returned_json["street_address"]).to eq "1 Franklin Park Rd"
-      expect(returned_json["city"]).to eq "Boston"
-      expect(returned_json["state"]).to eq "MA"
-      expect(returned_json["size"]).to eq "large"
-      expect(returned_json["description"]).to eq "Decent sized park, long sidewalks going all around"
-      expect(returned_json["traffic_level"]).to eq "low"
-      expect(returned_json["smoothness"]).to eq 2
-      expect(returned_json["lat"].to_f).to eq 42.3031
-      expect(returned_json["lng"].to_f).to eq -71.0868
-      expect(returned_json["title"]).to eq "Franklin Park"
+      expect(returned_json.length).to eq 2
+      expect(returned_json["location"]["street_address"]).to eq "1 Franklin Park Rd"
+      expect(returned_json["location"]["city"]).to eq "Boston"
+      expect(returned_json["location"]["state"]).to eq "MA"
+      expect(returned_json["location"]["size"]).to eq "large"
+      expect(returned_json["location"]["description"]).to eq "Decent sized park, long sidewalks going all around"
+      expect(returned_json["location"]["traffic_level"]).to eq "low"
+      expect(returned_json["location"]["smoothness"]).to eq 2
+      expect(returned_json["location"]["lat"].to_f).to eq 42.3031
+      expect(returned_json["location"]["lng"].to_f).to eq -71.0868
+      expect(returned_json["location"]["title"]).to eq "Franklin Park"
+      
+      expect(returned_json["comments"][0]["body"]).to eq "Great place, would come again!"
+      expect(returned_json["comments"][1]["body"]).to eq "Too many people, too thin sidewalks"
     end
   end
 

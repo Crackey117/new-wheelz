@@ -10,6 +10,7 @@ const LocationShow = (props) => {
       <p>General Description: {props.location.description}</p>
       <p>Traffic Level: {props.location.traffic_level}</p>
       <p>Smoothness of Pavement: {props.location.smoothness}</p>
+
     </div>
   )
 }

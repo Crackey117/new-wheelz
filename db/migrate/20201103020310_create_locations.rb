@@ -8,6 +8,7 @@ class CreateLocations < ActiveRecord::Migration[5.2]
       t.string :description, null: false
       t.string :traffic_level 
       t.integer :smoothness 
+      t.timestamps
     end
   end
 end
