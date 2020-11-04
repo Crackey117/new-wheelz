@@ -6,5 +6,5 @@ class Location < ApplicationRecord
   validates :lng, presence: true
   validates :size, presence: true
   validates :description, presence: true
-
+  has_many :comments
 end

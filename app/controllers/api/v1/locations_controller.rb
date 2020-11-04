@@ -6,7 +6,10 @@ class Api::V1::LocationsController < ApiController
 
   def show
     location = Location.find(params[:id])
-    render json: location
+    render json: {
+      location: serialized_data(location, LocationShowSerializer),
+      comments: serialized_data(location.comments, CommentSerializer)
+    }
   end 
 
   def create
@@ -23,4 +26,7 @@ class Api::V1::LocationsController < ApiController
     params.require(:location).permit([:title, :street_address, :city, :state, :description, :size, :lat, :lng, :traffic_level, :smoothness])
   end
 
+  def serialized_data(data, serializer)
+    ActiveModelSerializers::SerializableResource.new(data, each_serializer: serializer)
+  end
 end 
