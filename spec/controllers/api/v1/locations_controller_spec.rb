@@ -1,6 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Api::V1::LocationsController, type: :controller do 
+
   let!(:location1) {Location.create(
     street_address: "139 Tremont Street", 
     city: "Boston", 
@@ -25,18 +26,33 @@ RSpec.describe Api::V1::LocationsController, type: :controller do
     lng: -71.0868, 
     title: "Franklin Park"
   ) }
-  let!(:comment1) { Comment.create(
+  let!(:user1) {User.create(
+    email: "blah@gmail.com", 
+    first_name: "blah",
+    last_name: "blah",
+    password: "blahblah",
+    username: "blah"
+  )}
+  let!(:user2) {User.create(
+    email: "davy.jones@thelocker.com", 
+    first_name: "davy",
+    last_name: "jones",
+    password: "blahblahblah",
+    username: "squidguy"
+  )}
+  let!(:comment1) {Comment.create(
     body: "Great place, would come again!",
-    location: location2 
+    location: location2,
+    user: user1
   ) }
-  let!(:comment2) { Comment.create(
+  let!(:comment2) {Comment.create(
     body: "Too many people, too thin sidewalks",
-    location: location2 
+    location: location2,
+    user: user2
   ) }
-
+  
   describe "GET#index" do
-    it "should return a list of all the movies" do
-
+    it "should return a list of all the locations" do
       get :index
       returned_json = JSON.parse(response.body)
       expect(response.status).to eq 200
@@ -69,9 +85,9 @@ RSpec.describe Api::V1::LocationsController, type: :controller do
   end
 
   describe "GET#show" do
-
-    it "should return an movie with all its attributes" do
-      
+    
+    it "should return an location with all its attributes" do
+      sign_in user1
       get :show, params: {id: location2.id}
       returned_json = JSON.parse(response.body)
       expect(response.status).to eq 200
@@ -97,7 +113,8 @@ RSpec.describe Api::V1::LocationsController, type: :controller do
     context "when a request correct params is made" do
       let!(:good_location_data) { { location: {street_address: "139 Tremont Street", city: "Boston", state: "MA", size: "medium", description: "Park in the middle of downtown. A lot of poeple, but good sidewalk areas.", traffic_level: "very low", smoothness: 3, lat: 42.3554, lng: -71.0640, title: "Boston Common"} } }
 
-      it "adds the movie to the database" do 
+      it "adds the location to the database" do 
+        sign_in user1
         previous_count = Location.count
 
         post :create, params: good_location_data
@@ -108,6 +125,7 @@ RSpec.describe Api::V1::LocationsController, type: :controller do
       end
 
       it "returns the new location object as json" do
+        sign_in user1
         post :create, params: good_location_data
 
         returned_json = JSON.parse(response.body)
@@ -133,6 +151,7 @@ RSpec.describe Api::V1::LocationsController, type: :controller do
       let!(:bad_location_data) { { location: {street_address: "139 Tremont Street", state: "MA", size: "medium", description: "Park in the middle of downtown. A lot of poeple, but good sidewalk areas.", traffic_level: "very low", smoothness: 3, lat: 42.3554, title: "Boston Common"} } }
 
       it "should not should not save to the database" do
+        sign_in user1
         previous_count = Location.count
 
         post :create, params: bad_location_data
@@ -142,7 +161,8 @@ RSpec.describe Api::V1::LocationsController, type: :controller do
         expect(new_count).to eq previous_count
       end
 
-      it "does not successfully create a movie object" do
+      it "does not successfully create a location object" do
+        sign_in user1
         post :create, params: bad_location_data
 
         returned_response = JSON.parse(response.body)
@@ -152,6 +172,27 @@ RSpec.describe Api::V1::LocationsController, type: :controller do
       end
     end
     
+    context "when the parameters are correct but user is not signed it" do
+      let!(:bad_location_data) { { location: {street_address: "139 Tremont Street", state: "MA", size: "medium", description: "Park in the middle of downtown. A lot of poeple, but good sidewalk areas.", traffic_level: "very low", smoothness: 3, lat: 42.3554, title: "Boston Common"} } }
+
+      it "should not should not save to the database" do
+        previous_count = Location.count
+
+        post :create, params: bad_location_data
+
+        new_count = Location.count
+
+        expect(new_count).to eq previous_count
+      end
+
+      it "we are redirected to the sign in page" do
+        post :create, params: bad_location_data
+        
+        response_body = response.body
+        expect(response.status).to eq 302 
+        expect(response_body).to eq "<html><body>You are being <a href=\"http://test.host/users/sign_in\">redirected</a>.</body></html>"
+      end
+    end
   end
 
 end

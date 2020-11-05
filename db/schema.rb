@@ -17,10 +17,12 @@ ActiveRecord::Schema.define(version: 2020_11_04_020015) do
 
   create_table "comments", force: :cascade do |t|
     t.bigint "location_id", null: false
+    t.bigint "user_id", null: false
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["location_id"], name: "index_comments_on_location_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -31,6 +33,8 @@ ActiveRecord::Schema.define(version: 2020_11_04_020015) do
     t.string "description", null: false
     t.string "traffic_level"
     t.integer "smoothness"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.decimal "lat", precision: 10, scale: 6, null: false
     t.decimal "lng", precision: 10, scale: 6, null: false
     t.string "title", null: false

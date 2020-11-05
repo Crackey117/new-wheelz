@@ -1,10 +1,11 @@
 class Api::V1::CommentsController < ApiController  
-
+  before_action :authenticate_user, only: [:create]
 
   def create
     location = Location.find(params[:location_id])
     new_comment = Comment.new(comment_params)
     new_comment.location = location 
+    new_comment.user = current_user 
     if new_comment.save
       render json: new_comment  
     else 
@@ -17,7 +18,9 @@ class Api::V1::CommentsController < ApiController
     params.require(:comment).permit([:body])
   end
 
-  def serialized_data(data, serializer)
-    ActiveModelSerializers::SerializableResource.new(data, each_serializer: serializer)
+  def authenticate_user
+    if !user_signed_in?
+      render json: {error: ["You need to be signed in first"]}
+    end
   end
 end 
