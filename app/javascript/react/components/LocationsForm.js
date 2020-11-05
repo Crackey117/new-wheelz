@@ -12,8 +12,6 @@ const LocationsForm = (props) => {
     state: "",
     size: "",
     description: "",
-    lat: "",
-    lng: "",
     traffic_level: "",
     smoothness: ""
   })
@@ -26,7 +24,7 @@ const LocationsForm = (props) => {
 
   const validforSubmission = () => {
     let submittedErrors = {}
-    const requiredFields = ["title", "street_address", "city", "state", "description", "size", "lat", "lng"]
+    const requiredFields = ["title", "street_address", "city", "state", "description", "size"]
     requiredFields.forEach(field => {
       if (submittedLocation[field].trim() === "") {
         submittedErrors = {
@@ -61,13 +59,16 @@ const LocationsForm = (props) => {
       .then(response => response.json())
       .then(body => {
         if (body.errors) {
-          const requiredFields = ["title", "street_address", "city", "state", "description", "size", "lat", "lng"]
+          const requiredFields = ["title", "street_address", "city", "state", "description", "size"]
           requiredFields.forEach(field => { 
             if (body.errors[field] !== undefined) {
               setErrors({
                 ...errors,
                 [field]: body.errors[field][0]
               })
+            }
+            else if(body.errors["lat"] !== undefined || body.errors["lng"] !== undefined){
+              setError("Invalid address, please double check that it was entered correctly or try a different address.")
             }
           })
         }else if (body.error) {
@@ -90,7 +91,7 @@ const LocationsForm = (props) => {
   return(
     <div>
       <div>
-        <p className="callout secondary cell small-6">To add a new location, please enter a title, description, and size. Then fill in the address fields as well as Lat and Lng!</p>
+        <p className="callout secondary cell small-6">To add a new location, please enter a title, description, and size, as well as the address fields.</p>
       </div>
       
       <div className="field">
@@ -161,28 +162,6 @@ const LocationsForm = (props) => {
               type="text"
               onChange={inputChangeHandler}
               value={submittedLocation.size}
-              />
-          </label>
-
-          <label>
-            Latitude (positive or negative, not N or S)
-            <input 
-              name="lat"
-              id="lat"
-              type="text"
-              onChange={inputChangeHandler}
-              value={submittedLocation.lat}
-              />
-          </label>
-
-          <label>
-            Longitude (positive or negative, not W or E) 
-            <input 
-              name="lng"
-              id="lng"
-              type="text"
-              onChange={inputChangeHandler}
-              value={submittedLocation.lng}
               />
           </label>
 

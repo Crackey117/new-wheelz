@@ -111,7 +111,7 @@ RSpec.describe Api::V1::LocationsController, type: :controller do
 
   describe "POST#create" do
     context "when a request correct params is made" do
-      let!(:good_location_data) { { location: {street_address: "139 Tremont Street", city: "Boston", state: "MA", size: "medium", description: "Park in the middle of downtown. A lot of poeple, but good sidewalk areas.", traffic_level: "very low", smoothness: 3, lat: 42.3554, lng: -71.0640, title: "Boston Common"} } }
+      let!(:good_location_data) { { location: {street_address: "139 Tremont Street", city: "Boston", state: "MA", size: "medium", description: "Park in the middle of downtown. A lot of poeple, but good sidewalk areas.", traffic_level: "very low", smoothness: 3, title: "Boston Common"} } }
 
       it "adds the location to the database" do 
         sign_in user1
@@ -141,14 +141,14 @@ RSpec.describe Api::V1::LocationsController, type: :controller do
         expect(returned_json["description"]).to eq "Park in the middle of downtown. A lot of poeple, but good sidewalk areas."
         expect(returned_json["traffic_level"]).to eq "very low"
         expect(returned_json["smoothness"]).to eq 3
-        expect(returned_json["lat"].to_f).to eq 42.3554
-        expect(returned_json["lng"].to_f).to eq -71.0640
+        expect(returned_json["lat"].to_f).to eq 42.355455
+        expect(returned_json["lng"].to_f).to eq -71.063868
         expect(returned_json["title"]).to eq "Boston Common"
       end
     end
 
     context "when parameters are not filled out but user is signed in" do
-      let!(:bad_location_data) { { location: {street_address: "139 Tremont Street", state: "MA", size: "medium", description: "Park in the middle of downtown. A lot of poeple, but good sidewalk areas.", traffic_level: "very low", smoothness: 3, lat: 42.3554, title: "Boston Common"} } }
+      let!(:bad_location_data) { { location: {street_address: "139 Tremont Street", state: "MA", size: "medium", description: "Park in the middle of downtown. A lot of poeple, but good sidewalk areas.", traffic_level: "very low", smoothness: 3, title: "Boston Common"} } }
 
       it "should not should not save to the database" do
         sign_in user1
@@ -173,7 +173,7 @@ RSpec.describe Api::V1::LocationsController, type: :controller do
     end
     
     context "when the parameters are correct but user is not signed it" do
-      let!(:bad_location_data) { { location: {street_address: "139 Tremont Street", state: "MA", size: "medium", description: "Park in the middle of downtown. A lot of poeple, but good sidewalk areas.", traffic_level: "very low", smoothness: 3, lat: 42.3554, title: "Boston Common"} } }
+      let!(:bad_location_data) { { location: {street_address: "139 Tremont Street", state: "MA", size: "medium", description: "Park in the middle of downtown. A lot of poeple, but good sidewalk areas.", traffic_level: "very low", smoothness: 3, title: "Boston Common"} } }
 
       it "should not should not save to the database" do
         previous_count = Location.count
