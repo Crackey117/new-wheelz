@@ -1,4 +1,5 @@
 class Api::V1::LocationsController < ApiController  
+  before_action :authenticate_user!, except: [:index, :show]
   def index
     locations = Location.all
     render json: locations
@@ -27,6 +28,12 @@ class Api::V1::LocationsController < ApiController
   end
 
   def serialized_data(data, serializer)
-    ActiveModelSerializers::SerializableResource.new(data, each_serializer: serializer)
+    ActiveModelSerializers::SerializableResource.new(data, each_serializer: serializer, scope: current_user)
+  end
+
+  def authenticate_user
+    if !user_signed_in?
+      render json: {error: ["You need to be signed in first"]}
+    end
   end
 end 
