@@ -13,6 +13,8 @@ Rails.application.routes.draw do
       resources :locations, only: [:index, :show, :create, :destroy] do 
         resources :comments, only: [:show, :create, :destroy]
       end 
+      resources :current_location, only: [:create]
     end 
   end
+
 end 
