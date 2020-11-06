@@ -31,7 +31,8 @@ RSpec.describe Api::V1::LocationsController, type: :controller do
     first_name: "blah",
     last_name: "blah",
     password: "blahblah",
-    username: "blah"
+    username: "blah",
+    role: "admin"
   )}
   let!(:user2) {User.create(
     email: "davy.jones@thelocker.com", 
@@ -194,5 +195,23 @@ RSpec.describe Api::V1::LocationsController, type: :controller do
       end
     end
   end
+
+  describe "DELETE#destroy" do 
+    it "deletes a location from the database" do 
+      sign_in user1
+      location_2_copy = Location.last 
+      previous_count = Location.count
+      temp_id = location2.id 
+      location2.destroy 
+
+      new_count = Location.count
+      last_location = Location.last 
+      expect(new_count).to eq previous_count -1 
+      expect(location_2_copy.id).to eq temp_id
+      expect(last_location.id).not_to eq temp_id
+    end
+
+
+  end   
 
 end

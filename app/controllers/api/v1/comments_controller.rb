@@ -1,5 +1,10 @@
 class Api::V1::CommentsController < ApiController  
   before_action :authenticate_user, only: [:create]
+  before_action :authorize_user, only: [:show, :destroy]
+  def show
+    comment = Comment.find(params[:id])
+    render json: comment
+  end 
 
   def create
     location = Location.find(params[:location_id])
@@ -13,6 +18,13 @@ class Api::V1::CommentsController < ApiController
     end
   end
 
+  def destroy 
+    comment = Comment.find(params[:id])
+    if comment.destroy
+      render json: {destroyed: true}
+    end
+  end 
+
   private
   def comment_params
     params.require(:comment).permit([:body])
@@ -21,6 +33,12 @@ class Api::V1::CommentsController < ApiController
   def authenticate_user
     if !user_signed_in?
       render json: {error: ["You need to be signed in first"]}
+    end
+  end
+
+  def authorize_user
+    if !user_signed_in? || !current_user.admin?
+      raise ActionController::RoutingError.new("Not Found")
     end
   end
 end 

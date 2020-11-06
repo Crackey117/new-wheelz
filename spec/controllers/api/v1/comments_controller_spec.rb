@@ -84,4 +84,28 @@ RSpec.describe Api::V1::CommentsController, type: :controller do
       end
     end 
   end
+
+
+  describe "DELETE#destroy" do 
+    let!(:good_comment_data) {
+      { comment: {body: "Pavement was recently redone!"}, location_id: location2.id, user_id: user1.id}
+    }
+    let!(:good_comment_data_2) {
+      { comment: {body: "Pavement was recently redone!"}, location_id: location2.id, user_id: user1.id}
+    }
+    it "deletes a location from the database" do
+      
+      sign_in user1
+      post :create, params: good_comment_data 
+      post :create, params: good_comment_data_2 
+      comment_2_copy = Comment.last 
+      previous_count = Comment.count
+      Comment.last.destroy 
+
+      new_count = Comment.count
+      last_comment = Comment.last 
+      expect(new_count).to eq previous_count -1 
+      expect(last_comment.id).not_to eq comment_2_copy.id
+    end 
+  end   
 end
