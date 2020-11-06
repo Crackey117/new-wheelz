@@ -40,6 +40,13 @@ class Api::V1::LocationsController < ApiController
     end
   end
 
+  def destroy
+    location = Location.find(params[:id])
+    if location.destroy
+      render json: {destroyed: true}
+    end
+  end 
+
   private
   def location_params
     params.require(:location).permit([:title, :street_address, :city, :state, :description, :size, :traffic_level, :smoothness])
@@ -47,6 +54,12 @@ class Api::V1::LocationsController < ApiController
 
   def serialized_data(data, serializer)
     ActiveModelSerializers::SerializableResource.new(data, each_serializer: serializer, scope: current_user)
+  end
+
+  def authorize_user
+    if !user_signed_in? || !current_user.admin?
+      raise ActionController::RoutingError.new("Not Found")
+    end
   end
 
   def authenticate_user
