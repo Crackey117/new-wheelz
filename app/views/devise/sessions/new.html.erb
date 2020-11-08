@@ -1,24 +1,24 @@
-<h2>Log in</h2>
+<h2 class="yellow-background bordered half-width centered">Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field green-background centered bordered">
+  <div class="field sweet-blue-background centered bordered half-width">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field green-background centered bordered">
+  <div class="field sweet-blue-background centered bordered half-width">
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field green-background bordered">
+    <div class="field sweet-blue-background bordered half-width centered">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
   <% end %>
 
-  <div class="actions centered bordered yellow-background">
+  <div class="actions centered bordered yellow-background half-width">
     <%= f.submit "Log in" %>
   </div>
 <% end %>

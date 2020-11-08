@@ -8,10 +8,10 @@
 </head>
 <body>
   
-  <nav class="top-bar yellow-background bordered-two black-font">
+  <nav class="top-bar yellow-background bordered-two ">
     <section class="top-bar-section">
-      <h2 class="black-font"><a href="/">Skate Sharez Home</a></h2>
-      <h5 class="black-font"><a href="/locations/new">Share New Spot</a></h5>
+      <h2 class="black-font font-one"><a href="/">Skate Sharez Home</a></h2>
+      <h5 class="black-font font-one"><a href="/locations/new">Share New Spot</a></h5>
     </section> 
     <section class="top-bar-section black-font">
       <ul class="right">
@@ -26,9 +26,9 @@
   </nav>
 
   <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
-    </div>
+      <div class="white-text" flash flash-<%= key %>">
+        <%= value %>
+      </div>
   <%- end -%>
 
   <%= yield %>

@@ -23,10 +23,10 @@ const LocationsIndex = (props) => {
   let locationListItems = locations.map((location) => {
  
     return (
-    <div className="callout green-background bordered cell small-4 black-font"> 
+    <div className="callout maroon-background bordered cell small-4  box-shadow hover-zoom hover-zoom:hover"> 
       <Link to={`/locations/${location.id}`}>
-        <h2 className="black-font">{location.title}</h2>
-        <p className="black-font">{location.street_address} - {location.city} - {location.state}</p>  
+        <h2 className="matcha-text font-one centered bordered dark-background">{location.title}</h2>
+        <p className="matcha-text font-one centered">{location.street_address} - {location.city} - {location.state}</p>  
       </Link>
     </div>)
   })

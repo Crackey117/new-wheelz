@@ -2,7 +2,7 @@ html, body, div.body-container{
   background-image: url("https://wallpaperaccess.com/full/2099524.jpg"); 
   height: 100%;
   width: 100%;
-  background-size: cover 
+  background-size: cover;
  }
 
 
@@ -39,8 +39,16 @@ html, body, div.body-container{
   background-color: #dcf3d0;
 }
 
+.matcha-text {
+  color: #8be284;
+}
+
 .yellow-background {
   background-color: #fff1b5;
+}
+
+.maroon-background {
+  background-color:  #85144b;
 }
 
 .bordered-two {
@@ -62,6 +70,7 @@ map > div {
   width: 50%;
   margin-left: 25%;
   margin-right: 25%;
+  font-family: Perpetua,Baskerville,Big Caslon,Palatino Linotype,Palatino,URW Palladio L,Nimbus Roman No9 L,serif;
 }
 
 .bold {
@@ -80,4 +89,32 @@ map > div {
   width: 50%;
   margin-left: 25%;
   margin-right: 25%;
+}
+
+.box-shadow {
+  box-shadow: 0 4px 20px 0 grey;
+}
+.hover-zoom {
+  transition: all .2s ease-in-out;
+}
+.hover-zoom:hover{
+  transform: scale(1.1);
+}
+
+.white-text {
+  color: white; 
+}
+
+.third-width {
+  width: 75%;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+}
+
+.font-one {
+  font-family: Perpetua,Baskerville,Big Caslon,Palatino Linotype,Palatino,URW Palladio L,Nimbus Roman No9 L,serif;
+}
+
+.dark-background {
+  background-color: #585858;
 }

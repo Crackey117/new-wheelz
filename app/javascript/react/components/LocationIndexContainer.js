@@ -29,11 +29,11 @@ const LocationIndexContainer = (props) => {
   return(
     <div>
       <h1 className="centered heading bold">Welcome to Skate Sharez!</h1>
-      <h3 className="centered yellow-background bordered half-width">Shared Spots (by State)</h3>
+      <h4 className="font-one centered yellow-background bordered half-width">Shared Spots (by State)</h4>
       <div className="bordered sweet-blue-background"> 
         <LocationIndex /> 
       </div>
-      <div className="bordered sweet-blue-background">
+      <div className="bordered sweet-blue-background third-width">
         <CurrentLocationForm resetCoords={resetCoords} />
       </div> 
       <Map locations={locations} coords={coords} />

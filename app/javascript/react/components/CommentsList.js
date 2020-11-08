@@ -5,7 +5,7 @@ const CommentsList = (props) => {
   if(props.comments.length > 0) { 
     comments = props.comments.map(comment => {
       return (
-      <div className="callout cell small-12 bordered pink-background centeredz">
+      <div className="callout cell small-12 bordered pink-background third-width">
         <p>{comment.body}</p>
       </div>)
     })
@@ -13,7 +13,7 @@ const CommentsList = (props) => {
 
   return (
   <div>
-    <div className="grid-x grid-margin-x">
+    <div className="grid-x grid-margin-x third-width">
       {comments} 
     </div> 
   </div>
