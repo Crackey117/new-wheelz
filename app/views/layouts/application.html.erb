@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>NewWheelz</title>
+  <title>Spot Sharez</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   
-  <nav class="top-bar">
-    <h1><a href="/">NewWheelz</a></h1>
-
+  <nav class="top-bar yellow-background bordered-two black-font">
     <section class="top-bar-section">
+      <h2 class="black-font"><a href="/">Skate Sharez Home</a></h2>
+      <h5 class="black-font"><a href="/locations/new">Share New Spot</a></h5>
+    </section> 
+    <section class="top-bar-section black-font">
       <ul class="right">
         <%- if current_user -%>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>

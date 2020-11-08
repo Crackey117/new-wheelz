@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import Map from "./Map"
 import LocationIndex from "./LocationIndex"
-import { Link } from 'react-router-dom'
 import CurrentLocationForm from './CurrentLocationForm'
 const LocationIndexContainer = (props) => {
   const [coords, setCoords] = useState({ lat: 42.3554, lng: -71.0640 })
@@ -29,11 +28,14 @@ const LocationIndexContainer = (props) => {
   }, [])
   return(
     <div>
-      <h1>Welcome to Skate Sharez!</h1>
-      <h3>These are the spots other users have located near you:</h3>
-      <LocationIndex /> 
-      <Link className="big" to={`/locations/new`}>Add a New Spot </Link>
-      <CurrentLocationForm resetCoords={resetCoords} />
+      <h1 className="centered heading bold">Welcome to Skate Sharez!</h1>
+      <h3 className="centered yellow-background bordered half-width">Shared Spots (by State)</h3>
+      <div className="bordered sweet-blue-background"> 
+        <LocationIndex /> 
+      </div>
+      <div className="bordered sweet-blue-background">
+        <CurrentLocationForm resetCoords={resetCoords} />
+      </div> 
       <Map locations={locations} coords={coords} />
     </div> 
   )

@@ -28,7 +28,7 @@ const Map = (props) => {
       });
     })
   }
-  return <div ref={ref} style={{ width: 400, height: 300 }} />;
+  return <div className="map-canvas" ref={ref} style={{ width: 700, height: 500 }} />;
 };
  
 export default Map;

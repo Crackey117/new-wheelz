@@ -91,15 +91,15 @@ const LocationsForm = (props) => {
   return(
     <div>
       <div>
-        <p className="callout secondary cell small-6">To add a new location, please enter a title, description, and size, as well as the address fields.</p>
+        <p className="callout yellow-background bordered centered cell small-6">To add a new location, please enter a title, description, and size, as well as the address fields.</p>
       </div>
       
       <div className="field">
-        <form onSubmit={onClickHandler}>
+        <form className="sweet-blue-background bordered" onSubmit={onClickHandler}>
           <ErrorList errors={errors}
           error={error} />
 
-          <label>
+          <label className="bordered green-background centered">
             Title
             <input 
               name="title"
@@ -110,7 +110,7 @@ const LocationsForm = (props) => {
               />
           </label>
 
-          <label>
+          <label className="bordered green-background centered">
             Description
             <input 
               name="description"
@@ -121,7 +121,7 @@ const LocationsForm = (props) => {
               />
           </label>
 
-          <label>
+          <label className="bordered green-background centered">
             Street Address
             <input 
               name="street_address"
@@ -132,7 +132,7 @@ const LocationsForm = (props) => {
               />
           </label>
 
-          <label>
+          <label className="bordered green-background centered">
             City  
             <input 
               name="city"
@@ -143,7 +143,7 @@ const LocationsForm = (props) => {
               />
           </label>
 
-          <label>
+          <label className="bordered green-background centered">
             State (two-digit code) 
             <input 
               name="state"
@@ -154,7 +154,7 @@ const LocationsForm = (props) => {
               />
           </label>
 
-          <label>
+          <label className="bordered green-background centered">
             Size 
             <input 
               name="size"
@@ -165,7 +165,7 @@ const LocationsForm = (props) => {
               />
           </label>
 
-          <label>
+          <label className="bordered green-background centered">
             Traffic Level 
             <input 
               name="traffic_level"
@@ -175,7 +175,7 @@ const LocationsForm = (props) => {
               value={submittedLocation.traffic_level}
               />
           </label>
-          <label>
+          <label className="bordered green-background centered">
             Smoothness (1 to 5 with 5 being the smoothest) 
             <input 
               name="smoothness"
@@ -185,11 +185,12 @@ const LocationsForm = (props) => {
               value={submittedLocation.smoothness}
               />
           </label>
-
-          <input
-            type="submit"
-            value="Add New Location"
-          />
+          <div className="centered">
+            <input className="bordered"
+              type="submit"
+              value="Add New Location"
+            />
+          </div>
       </form>
       </div>
     </div>
