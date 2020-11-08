@@ -20,7 +20,7 @@ const CommentForm = (props) => {
     })
   }
   return (
-    <form className="new-review-form callout sweet-blue-background bordered" onSubmit={handleSubmit}>
+    <form className="new-review-form callout sweet-blue-background bordered third-width" onSubmit={handleSubmit}>
       <label className="review-label bordered green-background centered">
         Add a Comment:
         <input

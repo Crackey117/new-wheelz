@@ -91,13 +91,13 @@ const LocationsForm = (props) => {
   return(
     <div>
       <div>
-        <p className="callout yellow-background bordered centered cell small-6">To add a new location, please enter a title, description, and size, as well as the address fields.</p>
+        <p className="third-width callout yellow-background bordered centered cell small-6 bold">To add a new location, please enter a title, description, size, and address</p>
       </div>
-      
-      <div className="field">
-        <form className="sweet-blue-background bordered" onSubmit={onClickHandler}>
-          <ErrorList errors={errors}
+      <ErrorList errors={errors}
           error={error} />
+      <div className="field third-width">
+        <form className="sweet-blue-background bordered" onSubmit={onClickHandler}>
+          
 
           <label className="bordered green-background centered">
             Title
