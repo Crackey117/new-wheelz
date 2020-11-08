@@ -3,7 +3,7 @@ class Api::V1::LocationsController < ApiController
  
   before_action :authenticate_user!, except: [:index, :show]
   def index
-    locations = Location.all
+    locations = Location.order(:state)
     render json: locations
   end
 

@@ -62,7 +62,7 @@ const CurrentLocationForm = (props) => {
   return(
     <div>
       <div>
-        <p className="callout secondary cell small-6">Find yourself on the map to explore!</p>
+        <p className="callout yellow-background bordered centered cell small-6">Find yourself on the map to explore!</p>
       </div>
       
       <div className="field">
@@ -70,7 +70,7 @@ const CurrentLocationForm = (props) => {
           <ErrorList errors={errors}
           error={error} />
 
-          <label>
+          <label className="bordered green-background centered">
             Street Address
             <input 
               name="street_address"
@@ -81,7 +81,7 @@ const CurrentLocationForm = (props) => {
               />
           </label>
 
-          <label>
+          <label className="bordered green-background centered">
             City  
             <input 
               name="city"
@@ -92,7 +92,7 @@ const CurrentLocationForm = (props) => {
               />
           </label>
 
-          <label>
+          <label className="bordered green-background centered">
             State (two-digit code) 
             <input 
               name="state"
@@ -102,10 +102,12 @@ const CurrentLocationForm = (props) => {
               value={currentLocation.state}
               />
           </label>
-          <input
-            type="submit"
-            value="FIND ME!"
-          />
+          <div className="centered"> 
+            <input className="bordered yellow-background"
+              type="submit"
+              value="FIND ME!"
+            />
+          </div>
       </form>
       </div>
     </div>

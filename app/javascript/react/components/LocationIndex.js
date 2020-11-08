@@ -23,17 +23,17 @@ const LocationsIndex = (props) => {
   let locationListItems = locations.map((location) => {
  
     return (
-    <div className="callout secondary cell small-4"> 
+    <div className="callout green-background bordered cell small-4 black-font"> 
       <Link to={`/locations/${location.id}`}>
-        <h2 >{location.title}</h2>
-        <p>{location.street_address} - {location.city} - {location.state}</p>  
+        <h2 className="black-font">{location.title}</h2>
+        <p className="black-font">{location.street_address} - {location.city} - {location.state}</p>  
       </Link>
     </div>)
   })
 
   return (
   <div>
-    <div className="grid-x grid-margin-x">
+    <div className="grid-x grid-margin-x ">
       {locationListItems} 
     </div> 
   </div>
