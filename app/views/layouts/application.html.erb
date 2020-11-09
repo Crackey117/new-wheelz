@@ -10,16 +10,16 @@
   
   <nav class="top-bar yellow-background bordered-two ">
     <section class="top-bar-section">
-      <h2 class="black-font font-one"><a href="/">Skate Sharez Home</a></h2>
-      <h5 class="black-font font-one"><a href="/locations/new">Share New Spot</a></h5>
+      <h3><a class="black-font font-one" href="/">Skate Sharez Home</a></h3>
+      <h5><a class="black-font font-one" href="/locations/new">Share New Spot</a></h5>
     </section> 
-    <section class="top-bar-section black-font">
+    <section class="top-bar-section black-font font-one">
       <ul class="right">
         <%- if current_user -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <p><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p>
         <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <p><%= link_to 'Sign Up', new_user_registration_path %></p>
+          <p><%= link_to 'Sign In', new_user_session_path %></p>
         <%- end -%>
       </ul>
     </section>
