@@ -33,7 +33,7 @@ const CommentForm = (props) => {
       </label>
 
       <div className="button-group">
-        <input className="button" type="submit" value="Submit" />
+        <input className="button bordered yellow-background black-font" type="submit" value="Submit" />
       </div>
     </form>
   )

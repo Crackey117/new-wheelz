@@ -25,6 +25,7 @@
     "react-dom": "~16.8.0",
     "react-hook-google-maps": "^0.0.3",
     "react-router-dom": "5.0.0",
+    "react-select-us-states": "^0.1.2",
     "redbox-react": "1.6.0"
   },
   "devDependencies": {
