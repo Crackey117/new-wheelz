@@ -8,14 +8,18 @@
 </head>
 <body>
   
-  <nav class="top-bar yellow-background bordered-two ">
+  <nav class="top-bar orange-background ">
     <section class="top-bar-section">
-      <h5><a class="black-font font-one" href="/locations/new">Share New Spot</a></h5>
     </section> 
     <section class="top-bar-section"> 
       <h1 class="title-background"><a class="centered main-title bold" href="/">Skate Sharez!</a></h1>
+      <%- flash.each do |key, value| -%>
+        <div class="white-text centered" flash flash-<%= key %>">
+          <%= value %>
+        </div>
+      <%- end -%>
     </section>
-    <section class="top-bar-section black-font font-one">
+    <section class="top-bar-section black-font font-one bold">
       <ul class="right">
         <%- if current_user -%>
           <p><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p>
@@ -26,12 +30,6 @@
       </ul>
     </section>
   </nav>
-
-  <%- flash.each do |key, value| -%>
-      <div class="white-text" flash flash-<%= key %>">
-        <%= value %>
-      </div>
-  <%- end -%>
 
   <%= yield %>
 

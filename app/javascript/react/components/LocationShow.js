@@ -5,25 +5,31 @@ const LocationShow = (props) => {
   let pavement 
   let hills
   if(props.location.traffic_level){
-    traffic_level = <p className="green-background bordered centered third-width"><strong>Traffic:</strong> {props.location.traffic_level}</p>
+    traffic_level = <p className="pink-background bordered centered third-width"><strong>Traffic:</strong> {props.location.traffic_level}</p>
   }
   if(props.location.smoothness){
-    pavement = <p className="green-background bordered centered third-width"><strong>Pavement Quality:</strong> {props.location.smoothness}</p>
+    pavement = <p className="pink-background bordered centered third-width"><strong>Pavement Quality:</strong> {props.location.smoothness}</p>
   }
   if(props.location.hills){
-    hills = <p className="green-background bordered centered third-width"><strong>Terrain:</strong> {props.location.hills}</p>
+    hills = <p className="pink-background bordered centered third-width"><strong>Terrain:</strong> {props.location.hills}</p>
   }
 
   return (
-    <div className="sweet-blue-background bordered third-width"> 
-      <h1 className="centered heading">{props.location.title}</h1>
-      <p className="green-background bordered centered third-width"><strong>Address:</strong> {props.location.street_address}, {props.location.city}, {props.location.state} </p>
-      <p className="green-background bordered centered third-width"><strong>Size:</strong> {props.location.size}</p>
-      <p className="green-background bordered centered third-width"><strong>Description:</strong> {props.location.description}</p>
-      {traffic_level}
-      {pavement}
-      {hills}
-    </div>
+      <div className="sweet-blue-background bordered third-width"> 
+        <h2 className="centered heading2">{props.location.title}</h2>
+        <br></br>
+        <p className="pink-background bordered centered third-width"><strong>Address:</strong> {props.location.street_address}, {props.location.city}, {props.location.state} </p>
+        <br></br>
+        <p className="pink-background bordered centered third-width"><strong>Size:</strong> {props.location.size}</p>
+        <br></br>
+        <p className="pink-background bordered centered third-width"><strong>Description:</strong> {props.location.description}</p>
+        <br></br>
+        {traffic_level}
+        <br></br>
+        {pavement}
+        <br></br>
+        {hills}
+      </div>
   )
 }
 export default LocationShow 

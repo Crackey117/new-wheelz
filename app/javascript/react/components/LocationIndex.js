@@ -38,7 +38,7 @@ const LocationsIndex = (props) => {
   }
 
   return (
-  <div className>
+  <div >
     <div>
       <label className="bordered green-background centered bold half-width">
           Sort by State: 
