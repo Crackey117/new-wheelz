@@ -17,7 +17,8 @@ user1 = User.create(
     first_name: "davy",
     last_name: "jones",
     password: "blahblahblah",
-    username: "squidguy"
+    username: "squidguy",
+    role: "admin"
   )
 
 location1 = Location.create(street_address: "139 Tremont Street", city: "Boston", state: "MA", size: "medium", description: "Park in the middle of downtown. A lot of poeple, but good sidewalk areas.", traffic_level: "very low", smoothness: 3, lat: 42.3554, lng: -71.0640, title: "Boston Common")

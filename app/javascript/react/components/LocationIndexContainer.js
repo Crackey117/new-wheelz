@@ -27,7 +27,7 @@ const LocationIndexContainer = (props) => {
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])
   return(
-    <div>
+    <div className="cell grid-container page">
       <h4 className="font-one centered yellow-background bordered half-width">Shared Spots</h4>
       <div className="bordered sweet-blue-background margined"> 
         <LocationIndex /> 
