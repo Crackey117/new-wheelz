@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import { useGoogleMaps } from "react-hook-google-maps"
-import longboard_icon from "/Users/chrisrackey/challenges/new-wheelz/app/assets/images/longboard_icon.png"
+import longboard_icon from "../../../assets/images/longboard_icon.png"
 const Map = (props) => {
   const center = { lat: props.coords.lat, lng: props.coords.lng }
   const mapStyling = [
