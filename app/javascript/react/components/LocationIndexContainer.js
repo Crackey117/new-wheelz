@@ -28,7 +28,6 @@ const LocationIndexContainer = (props) => {
   }, [])
   return(
     <div>
-      <h1 className="centered heading bold">Welcome to Skate Sharez!</h1>
       <h4 className="font-one centered yellow-background bordered half-width">Shared Spots</h4>
       <div className="bordered sweet-blue-background margined"> 
         <LocationIndex /> 

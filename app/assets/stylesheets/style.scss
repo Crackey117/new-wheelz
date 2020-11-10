@@ -78,6 +78,20 @@ map > div {
   font-family: Perpetua,Baskerville,Big Caslon,Palatino Linotype,Palatino,URW Palladio L,Nimbus Roman No9 L,serif;
 }
 
+.main-title {
+  color: #85144b;
+  font-weight: bold;
+  width: 50%; 
+  font-family: Perpetua,Baskerville,Big Caslon,Palatino Linotype,Palatino,URW Palladio L,Nimbus Roman No9 L,serif;
+}
+
+.title-background {
+  border: solid 5px;
+  border-color: #111111;
+  border-radius: 25px;
+  background-color: #39CCCC;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -132,3 +146,4 @@ map > div {
   margin-right: 50px;
   margin-left: 50px;
 }
+
