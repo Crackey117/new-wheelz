@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Spot Sharez</title>
+  <title>Skate Sharez</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
@@ -10,9 +10,11 @@
   
   <nav class="top-bar yellow-background bordered-two ">
     <section class="top-bar-section">
-      <h3><a class="black-font font-one" href="/">Skate Sharez Home</a></h3>
       <h5><a class="black-font font-one" href="/locations/new">Share New Spot</a></h5>
     </section> 
+    <section class="top-bar-section"> 
+      <h1 class="title-background"><a class="centered main-title bold" href="/">Skate Sharez!</a></h1>
+    </section>
     <section class="top-bar-section black-font font-one">
       <ul class="right">
         <%- if current_user -%>
