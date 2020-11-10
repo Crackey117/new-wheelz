@@ -7,7 +7,10 @@ html, body, div.body-container{
 
  .top-bar-section {
    ul {
-    background-color: #fff1b5;
+    background-color: #ffa089;
+   }
+   a {
+     color: #111111
    }
  }
 
@@ -65,7 +68,7 @@ map > div {
 }
 
 
-.heading {
+.heading2 {
   color: #85144b;
   background-color: #39CCCC;
   border: solid 5px;
@@ -79,7 +82,7 @@ map > div {
 }
 
 .main-title {
-  color: #85144b;
+  color: #fff1b5;
   font-weight: bold;
   width: 50%; 
   font-family: Perpetua,Baskerville,Big Caslon,Palatino Linotype,Palatino,URW Palladio L,Nimbus Roman No9 L,serif;
@@ -87,9 +90,9 @@ map > div {
 
 .title-background {
   border: solid 5px;
-  border-color: #111111;
+  border-color: #ffe1d0;
   border-radius: 25px;
-  background-color: #39CCCC;
+  background-color:#EE82EE;
 }
 
 .bold {
@@ -139,7 +142,7 @@ map > div {
 }
 
 .orange-background {
-  background-color: #ffc87c;
+  background-color: #ffa089;
 }
 
 .margined {
@@ -147,3 +150,17 @@ map > div {
   margin-left: 50px;
 }
 
+.nav-margined {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+
+.adjusted {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.nav-background {
+  background-color: #FFD4E5;
+}

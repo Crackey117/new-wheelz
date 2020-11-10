@@ -90,13 +90,13 @@ const LocationsForm = (props) => {
   }
 
   return(
-    <div>
+    <div className="third-width cell auto grid-container page">
       <div>
         <p className="third-width callout yellow-background bordered centered cell small-6 bold">To add a new location, please enter a title, description, size, and address</p>
       </div>
       <ErrorList errors={errors}
           error={error} />
-      <div className="field third-width">
+      <div className="field">
         <form className="sweet-blue-background bordered" onSubmit={onClickHandler}>
           
 

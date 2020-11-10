@@ -84,7 +84,7 @@ const LocationShowContainer = (props) => {
   
   
   return (
-    <div>
+    <div className="cell auto grid-container page">
       <LocationShow
         location={location}
       />
