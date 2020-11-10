@@ -12,6 +12,9 @@ const Navbar = (props) => {
         <Link className="cell nav-margined bold black-font" to="/locations/new">
           Share Your Own Spot 
         </Link>
+        <Link className="cell nav-margined bold black-font" to="/about">
+          About 
+        </Link>
       </div>
     </div>
   );

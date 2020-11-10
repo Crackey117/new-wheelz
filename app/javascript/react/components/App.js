@@ -7,6 +7,7 @@ import LocationDestroy from "./LocationDestroy"
 import CommentIndex from "./CommentIndex"
 import CommentDestroy from "./CommentDestory"
 import Navbar from "./Navbar"
+import AboutPage from "./AboutPage.js"
 export const App = () => {
   return (
     <div>
@@ -18,6 +19,7 @@ export const App = () => {
         <Navbar classes="cell small-1 navbar nav-background" />
         <Switch>
           <Route exact path="/" component={LocationIndexContainer} />
+          <Route exact path="/about" component={AboutPage} />
           <Route exact path="/locations" component={LocationIndexContainer} />
           <Route exact path="/locations/new" component={LocationsForm} />
           <Route exact path="/locations/:id" component={LocationShowContainer} />
