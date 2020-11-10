@@ -13,7 +13,8 @@ const LocationsForm = (props) => {
     size: "",
     description: "",
     traffic_level: "",
-    smoothness: ""
+    smoothness: "",
+    hills: ""
   })
   const [shouldRedirect, setShouldRedirect] = useState({
     redirect: false,
@@ -231,6 +232,16 @@ const LocationsForm = (props) => {
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
+            </select>
+          </label>
+          <label className="bordered green-background centered">
+            Terrain 
+            <select name="hills" id="hills" onChange={inputChangeHandler} value={submittedLocation.hills}>
+              <option value="">-------</option>
+              <option value="Flat">Flat</option>
+              <option value="Slight Hills">Slight Hills</option>
+              <option value="Mixed">Mixed</option>
+              <option value="Steep Hills">Steep Hills</option>
             </select>
           </label>
           <div className="centered">
