@@ -118,7 +118,7 @@ const Map = (props) => {
     "AIzaSyC_YGBXqAn8ejgn1DXEe2nSQh4M9lUULyo",
     {
       center: center,
-      zoom: 14,
+      zoom: 13,
       styles: mapStyling
     },
   );
@@ -132,7 +132,7 @@ const Map = (props) => {
       let marker = new google.maps.Marker({ position: {lat: parseFloat(location.lat), lng: parseFloat(location.lng)}, map, name: location.title, icon: {url: longboard_icon, scaledSize: new google.maps.Size(30, 30)}})
       let infowindow = new google.maps.InfoWindow() 
       let siteLink = `/locations/${location.id}`
-      let contentString = '<div">' + '<b>' + location.title + '</br>' + '<a href="' + siteLink + '">See more!</a>'
+      let contentString = '<div>' + '<b>' + location.title + '</br>' + '<a href="' + siteLink + '">See more!</a>'
       google.maps.event.addListener(marker, "click", function(evt) {  
         infowindow.setContent(contentString);
         infowindow.open(map,this);
