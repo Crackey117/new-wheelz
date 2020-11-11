@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   get "/locations", to: "homes#index"
   get "/about", to: "homes#index"
+  get "/map", to: "homes#index"
   get "/locations/new", to: "homes#authenticated"
   get "/locations/:id", to: "homes#index"
   get "/locations/:id/destroy", to: "homes#authenticated"

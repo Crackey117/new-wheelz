@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
-import LocationIndex from "./LocationIndex"
+import Map from "./Map"
+import CurrentLocationForm from './CurrentLocationForm'
 const LocationIndexContainer = (props) => {
   const [coords, setCoords] = useState({ lat: 42.3554, lng: -71.0640 })
   const [locations, setLocations] = useState([])
@@ -27,9 +28,10 @@ const LocationIndexContainer = (props) => {
   return(
     <div className="cell grid-container page">
       <h4 className="font-one centered yellow-background bordered half-width bold">Shared Spots</h4>
-      <div className="margined"> 
-        <LocationIndex /> 
-      </div>
+     `<div className="bordered pink-background third-width">
+        <CurrentLocationForm resetCoords={resetCoords} />
+      </div> 
+      <Map locations={locations} coords={coords} />
     </div> 
   )
 }
