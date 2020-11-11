@@ -28,14 +28,14 @@ const LocationIndexContainer = (props) => {
   }, [])
   return(
     <div className="cell grid-container page">
-      <h4 className="font-one centered yellow-background bordered half-width">Shared Spots</h4>
-      <div className="bordered sweet-blue-background margined"> 
-        <LocationIndex /> 
-      </div>
-      <div className="bordered sweet-blue-background third-width">
+      <h4 className="font-one centered yellow-background bordered half-width bold">Shared Spots</h4>
+     `<div className="bordered pink-background third-width">
         <CurrentLocationForm resetCoords={resetCoords} />
       </div> 
       <Map locations={locations} coords={coords} />
+      <div className="margined"> 
+        <LocationIndex /> 
+      </div>
     </div> 
   )
 }

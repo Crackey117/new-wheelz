@@ -62,7 +62,7 @@ const CurrentLocationForm = (props) => {
   return(
     <div>
       <div>
-        <p className="callout yellow-background bordered centered cell small-6">Find yourself on the map to explore!</p>
+        <p className="sweet-blue-background bordered third-width centered cell small-6">Find yourself on the map to explore!</p>
       </div>
       
       <div className="field">
@@ -70,7 +70,7 @@ const CurrentLocationForm = (props) => {
           <ErrorList errors={errors}
           error={error} />
 
-          <label className="bordered green-background centered">
+          <label className="bordered-three green-background centered">
             Street Address
             <input 
               name="street_address"
@@ -81,7 +81,7 @@ const CurrentLocationForm = (props) => {
               />
           </label>
 
-          <label className="bordered green-background centered">
+          <label className="bordered-three green-background centered">
             City  
             <input 
               name="city"
@@ -92,7 +92,7 @@ const CurrentLocationForm = (props) => {
               />
           </label>
 
-          <label className="bordered green-background centered">
+          <label className="bordered-three green-background centered">
             State 
             <select id="state" name="state" onChange={inputChangeHandler} value={currentLocation.state}>
               <option value="">-------</option>
@@ -150,7 +150,7 @@ const CurrentLocationForm = (props) => {
             </select>				
           </label>
           <div className="centered"> 
-            <input className="bordered yellow-background"
+            <input className="bordered-three yellow-background"
               type="submit"
               value="FIND ME!"
             />
