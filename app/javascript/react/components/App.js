@@ -8,15 +8,16 @@ import CommentIndex from "./CommentIndex"
 import CommentDestroy from "./CommentDestory"
 import Navbar from "./Navbar"
 import AboutPage from "./AboutPage.js"
+import MapContainer from "./MapContainer"
 export const App = () => {
   return (
-    <div>
+    <div className="height-two">
 
     <BrowserRouter>
- 
+      
       <div className="cell medium-auto medium-cell-block-container">
       <div className="grid-x" style={{ height: "100%" }}>
-        <Navbar classes="cell small-1 navbar nav-background" />
+        <Navbar classes="cell small-1 navbar nav-background sidebar" />
         <Switch>
           <Route exact path="/" component={LocationIndexContainer} />
           <Route exact path="/about" component={AboutPage} />
@@ -26,10 +27,11 @@ export const App = () => {
           <Route exact path="/locations/:id/destroy" component={LocationDestroy} />
           <Route exact path="/locations/:location_id/comments" component={CommentIndex} />
           <Route exact path="/locations/:location_id/comments/:id/destroy" component={CommentDestroy} />
+          <Route exact path="/map" component={MapContainer} />
         </Switch>
       </div>
-    </div>
-
+      </div>
+   
     </BrowserRouter>
     </div>
   )

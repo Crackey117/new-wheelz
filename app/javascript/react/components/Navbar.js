@@ -4,10 +4,13 @@ import { Link } from "react-router-dom";
 const Navbar = (props) => {
 
   return(
-    <div className={props.classes}>
+    <div className={props.classes} >
       <div className="grid-x grid-padding-x">
         <Link className="cell nav-margined bold black-font" to="/locations">
           Browse Spots
+        </Link>
+        <Link className="cell nav-margined bold black-font" to="/map">
+          Spot Map
         </Link>
         <Link className="cell nav-margined bold black-font" to="/locations/new">
           Share Your Own Spot 
