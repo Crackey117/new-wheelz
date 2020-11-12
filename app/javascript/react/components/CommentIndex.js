@@ -36,7 +36,7 @@ const CommentIndex = (props) => {
   
   
   return (
-    <div>
+    <div className="bordered yellow-background">
       <h1>Location Title: {location.title}</h1>
       {commentList}
     </div>

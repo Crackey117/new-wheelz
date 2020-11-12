@@ -53,15 +53,18 @@ const LocationDestroy = (props) => {
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   };
-
+  let title = ""
+  if(currentLocation.location){
+    title = currentLocation.location.title
+  }
   if (shouldRedirect) {
     return <Redirect to='/locations' />
   }
 
   return (
-    <div className='grid-container wrapper'>
+    <div className='grid-container wrapper bordered sweet-blue-background'>
       <p>{error}</p>
-      <h4>Are you sure you want to delete {currentLocation.title}?</h4>
+      <h4>Are you sure you want to delete {title}?</h4>
       <div className='button-group'>
           <input onClick={onClickDelete} className='button' type='submit' value='Delete Location' />
         </div>
