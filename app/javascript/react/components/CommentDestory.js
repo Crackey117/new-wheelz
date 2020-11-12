@@ -60,8 +60,8 @@ const CommentDestroy = (props) => {
   }
 
   return (
-    <div className='grid-container wrapper'>
-      <h4>Are you sure you want to delete {currentComment.body}?</h4>
+    <div className='grid-container wrapper sweet-blue-background bordered'>
+      <h4>Are you sure you want to delete "{currentComment.body}"?</h4>
       <div className='button-group'>
           <input onClick={onClickDelete} className='button' type='submit' value='Delete Comment' />
         </div>
