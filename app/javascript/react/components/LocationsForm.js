@@ -92,15 +92,15 @@ const LocationsForm = (props) => {
   return(
     <div className="third-width cell auto grid-container page">
       <div>
-        <p className="third-width callout yellow-background bordered centered cell small-6 bold">To add a new location, please enter a title, description, size, and address</p>
+        <p className="third-width callout yellow-background bordered-yellow centered cell small-6 bold">To add a new location, please enter a title, description, size, and address</p>
       </div>
       <ErrorList errors={errors}
           error={error} />
       <div className="field">
-        <form className="sweet-blue-background bordered" onSubmit={onClickHandler}>
+        <form className="pink-background bordered" onSubmit={onClickHandler}>
           
 
-          <label className="bordered green-background centered">
+          <label className="bordered-three green-background centered">
             Title
             <input 
               name="title"
@@ -111,7 +111,7 @@ const LocationsForm = (props) => {
               />
           </label>
 
-          <label className="bordered green-background centered">
+          <label className="bordered-three green-background centered">
             Description
             <input 
               name="description"
@@ -122,7 +122,7 @@ const LocationsForm = (props) => {
               />
           </label>
 
-          <label className="bordered green-background centered">
+          <label className="bordered-three green-background centered">
             Street Address
             <input 
               name="street_address"
@@ -133,7 +133,7 @@ const LocationsForm = (props) => {
               />
           </label>
 
-          <label className="bordered green-background centered">
+          <label className="bordered-three green-background centered">
             City  
             <input 
               name="city"
@@ -144,7 +144,7 @@ const LocationsForm = (props) => {
               />
           </label>
 
-          <label className="bordered green-background centered">
+          <label className="bordered-three green-background centered">
             State 
             <select id="state" name="state" onChange={inputChangeHandler} value={submittedLocation.state}>
               <option value="">-------</option>
@@ -202,7 +202,7 @@ const LocationsForm = (props) => {
             </select>				
           </label>
 
-          <label className="bordered green-background centered">
+          <label className="bordered-three green-background centered">
             Size 
             <select name="size" id="size" onChange={inputChangeHandler} value={submittedLocation.size}>
               <option value="">-------</option>
@@ -212,7 +212,7 @@ const LocationsForm = (props) => {
             </select>
           </label>
 
-          <label className="bordered green-background centered">
+          <label className="bordered-three green-background centered">
             Traffic Level 
             <select name="traffic_level" id="traffic_level" onChange={inputChangeHandler} value={submittedLocation.traffic_level}>
               <option value="">-------</option>
@@ -223,7 +223,7 @@ const LocationsForm = (props) => {
               <option value="Very High">Very High</option>
             </select>
           </label>
-          <label className="bordered green-background centered">
+          <label className="bordered-three green-background centered">
             Pavement Quality (1 to 5 with 5 being the smoothest) 
             <select name="smoothness" id="smoothness" onChange={inputChangeHandler} value={submittedLocation.smoothness}>
               <option value="">-------</option>
@@ -234,7 +234,7 @@ const LocationsForm = (props) => {
               <option value="5">5</option>
             </select>
           </label>
-          <label className="bordered green-background centered">
+          <label className="bordered-three green-background centered">
             Terrain 
             <select name="hills" id="hills" onChange={inputChangeHandler} value={submittedLocation.hills}>
               <option value="">-------</option>
@@ -245,7 +245,7 @@ const LocationsForm = (props) => {
             </select>
           </label>
           <div className="centered">
-            <input className="bordered yellow-background"
+            <input className="bordered-three yellow-background"
               type="submit"
               value="Add New Location"
             />

@@ -1,16 +1,17 @@
-html, body, div.body-container{ 
-  background-image: url("https://wallpaperaccess.com/full/2099524.jpg"); 
-  height: 100%;
-  width: 100%;
-  background-size: cover;
- }
 
+ body { 
+  background: url("https://wallpaperaccess.com/full/2099524.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
  .top-bar-section {
    ul {
-    background-color: #ffa089;
+    background-color:#116466
    }
    a {
-     color: #111111
+     color: #111111;
    }
  }
 
@@ -39,12 +40,15 @@ html, body, div.body-container{
   background-color: #fef6dd;
 }
 
+.dark-blue-background {
+  background-color: #116466;
+}
 .sweet-blue-background {
   background-color: #b5e9e9;
 }
 
 .green-background {
-  background-color: #dcf3d0;
+  background-color: #D1E8E2;
 }
 
 .matcha-text {
@@ -69,8 +73,8 @@ map > div {
 
 
 .heading2 {
-  color: #FFDF00;
-  background-color: #39CCCC;
+  color: #111111;
+  background-color: #D9B080;
   border: solid 5px;
   border-color: #111111;
   border-radius: 25px;
@@ -82,7 +86,7 @@ map > div {
 }
 
 .main-title {
-  color: #fff1b5;
+  color: #111111;
   font-weight: bold;
   width: 50%; 
   font-family: Perpetua,Baskerville,Big Caslon,Palatino Linotype,Palatino,URW Palladio L,Nimbus Roman No9 L,serif;
@@ -90,9 +94,9 @@ map > div {
 
 .title-background {
   border: solid 5px;
-  border-color: #ffe1d0;
+  border-color: #E27D60;
   border-radius: 25px;
-  background-color:#EE82EE;
+  background-color:#E27D60;
 }
 
 .bold {
@@ -164,7 +168,7 @@ map > div {
 }
 
 .nav-background {
-  background-color: #FFD4E5;
+  background-color: #FFCB9A;
 }
 
 .bordered-three {
@@ -183,4 +187,26 @@ map > div {
   padding-bottom: 20%;
   overflow: hidden;
 }
+
+
+.dark-tan-background {
+  background-color: #D9B080;
+  border: solid 2px;
+  border-color: #D9B080;
+  border-radius: 25px;
+}
+
+.bordered-four {
+  border: solid 5px;
+  border-color: #D1E8E2;
+  border-radius: 25px;
+}
+
+.bordered-yellow {
+  border: solid 5px;
+  border-color: #fff1b5;
+  margin-top: 5px;
+  border-radius: 25px;
+}
+
 

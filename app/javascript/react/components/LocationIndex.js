@@ -40,7 +40,7 @@ const LocationsIndex = (props) => {
   return (
   <div>
     <div>
-      <label className="bordered green-background centered bold half-width">
+      <label className="bordered-four green-background centered bold half-width">
           Sort by State: 
           <select id="state" name="state" onChange={stateChange} value={currentState}>
             <option value="All">All</option>
