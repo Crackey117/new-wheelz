@@ -26,7 +26,7 @@ const LocationIndexContainer = (props) => {
   }, [])
   return(
     <div className="cell grid-container page">
-      <h4 className="font-one centered yellow-background bordered half-width bold">Shared Spots</h4>
+      <h4 className="font-one centered dark-tan-background bordered half-width bold">Shared Spots</h4>
       <div className="margined"> 
         <LocationIndex /> 
       </div>

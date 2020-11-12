@@ -8,7 +8,7 @@
 </head>
 <body>
   
-  <nav class="top-bar orange-background ">
+  <nav class="top-bar dark-blue-background ">
     <section class="top-bar-section">
     </section> 
     <section class="top-bar-section"> 
@@ -19,7 +19,7 @@
         </div>
       <%- end -%>
     </section>
-    <section class="top-bar-section black-font font-one bold">
+    <section class="top-bar-section white-text font-one bold">
       <ul class="right">
         <%- if current_user -%>
           <p><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p>

@@ -62,7 +62,7 @@ const CurrentLocationForm = (props) => {
   return(
     <div>
       <div>
-        <p className="sweet-blue-background bordered third-width centered cell small-6">Find yourself on the map to explore!</p>
+        <p className="bordered third-width centered cell small-6">Find yourself on the map to explore!</p>
       </div>
       
       <div className="field">
