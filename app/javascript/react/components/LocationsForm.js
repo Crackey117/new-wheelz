@@ -4,7 +4,6 @@ import _ from 'lodash'
 import ErrorList from './ErrorList'
 
 const LocationsForm = (props) => {
-
   const [submittedLocation, setSubmittedLocation] = useState({
     title: "",
     street_address: "",

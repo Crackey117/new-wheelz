@@ -5,6 +5,7 @@ const CommentDestroy = (props) => {
   const [shouldRedirect, setShouldRedirect] = useState(false);
   const [error, setError] = useState(null)
   let location_id = props.match.params.location_id
+
   useEffect(() => {
     let id = props.match.params.id
     fetch(`/api/v1/locations/${location_id}/comments/${id}`)

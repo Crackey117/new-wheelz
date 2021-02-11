@@ -3,7 +3,6 @@ import _ from 'lodash'
 import ErrorList from './ErrorList'
 
 const CurrentLocationForm = (props) => {
-
   const [currentLocation, setCurrentLocation] = useState({
     street_address: "",
     city: "",

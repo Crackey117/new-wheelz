@@ -4,6 +4,7 @@ const LocationShow = (props) => {
   let traffic_level
   let pavement 
   let hills
+  
   if(props.location.traffic_level){
     traffic_level = <div className="centered"> <lable className="centered"><strong>Traffic:</strong> <p className="pink-background bordered centered third-width">{props.location.traffic_level}</p></lable></div>
   }
