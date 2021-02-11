@@ -2,6 +2,7 @@ import React from "react"
 
 const CommentsList = (props) => {
   let comments = ""
+
   if(props.comments.length > 0) { 
     comments = props.comments.map(comment => {
       return (

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 const LocationsIndex = (props) => {
   const [currentState, setCurrentState] = useState(null)
   const [locations, setLocations] = useState([])
+  
   useEffect(() => {
     fetch("/api/v1/locations.json")
     .then (response => {

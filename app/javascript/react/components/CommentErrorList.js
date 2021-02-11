@@ -3,6 +3,7 @@ import _ from "lodash"
 
 const CommentErrorList = props => { 
   const errantFields = Object.keys(props.errors)
+
   if (errantFields.length > 0) {
     let index = 0
     const listItems = errantFields.map(field => {

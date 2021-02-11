@@ -1,6 +1,7 @@
 import React from "react"
 
 const AboutPage = (props) => {
+  
   return(
     <div className="bordered tan-background third-width">
       <h1 className=" centered bold">About</h1>

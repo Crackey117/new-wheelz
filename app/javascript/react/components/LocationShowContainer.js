@@ -44,6 +44,7 @@ const LocationShowContainer = (props) => {
     setErrors(submittedErrors)
     return _.isEmpty(submittedErrors)
   }
+  
   const addNewComment = (newCommentObject) => {
     event.preventDefault() 
     if (validforSubmission(newCommentObject)) {

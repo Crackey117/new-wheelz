@@ -139,6 +139,7 @@ const Map = (props) => {
       });
     })
   }
+  
   return <div className="map-canvas" ref={ref} style={{ width: 700, height: 500 }} />;
 };
  

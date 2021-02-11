@@ -4,6 +4,7 @@ const LocationDestroy = (props) => {
   const [currentLocation, setCurrentLocation] = useState({});
   const [shouldRedirect, setShouldRedirect] = useState(false);
   const [error, setError] = useState(null)
+  
   useEffect(() => {
     let id = props.match.params.id
     fetch(`/api/v1/locations/${id}`)
